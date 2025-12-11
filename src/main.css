@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* Custom fonts */
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("./assets/fonts/NetflixSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("./assets/fonts/NetflixSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("./assets/fonts/NetflixSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("./assets/fonts/NetflixSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Colors */
+  /* Primary */
+  --color-primary-black: #000000;
+  --color-primary-red: #e50914;
+  --color-primary-white: #ffffff;
+
+  /* Secondary */
+  --color-secondary-red-100: #eb3942;
+  --color-secondary-red-200: #c11119;
+  --color-secondary-red-300: #f50723;
+  --color-secondary-blue-100: #0071eb;
+  --color-secondary-blue-200: #448ef4;
+  --color-secondary-blue-300: #54b9c5;
+  --color-secondary-green: #46d369;
+
+  /* Neutral / Gray */
+  --color-neutral-gray-10: #e5e5e5;
+  --color-neutral-gray-20: #dcdcdc;
+  --color-neutral-gray-25: #d2d2d2;
+  --color-neutral-gray-50: #bcbcbc;
+  --color-neutral-gray-100: #b3b3b3;
+  --color-neutral-gray-150: #979797;
+  --color-neutral-gray-200: #808080;
+  --color-neutral-gray-250: #777777;
+  --color-neutral-gray-300-70: #6d6d6eb3;
+  --color-neutral-gray-300-40: #6d6d6e66;
+  --color-neutral-gray-350: #545454;
+  --color-neutral-gray-400: #414141;
+  --color-neutral-gray-450: #404040;
+  --color-neutral-gray-500: #3a3a3a;
+  --color-neutral-gray-550: #363636;
+  --color-neutral-gray-600: #333333;
+  --color-neutral-gray-600-60: #33333399;
+  --color-neutral-gray-650: #2f2f2f;
+  --color-neutral-gray-700: #2a2a2a;
+  --color-neutral-gray-750: #262626;
+  --color-neutral-gray-800: #232323;
+  --color-neutral-gray-850: #181818;
+  --color-neutral-gray-900: #141414;
+
+  /* Overlay */
+  --color-overlay-white-15: #ffffff26;
+  --color-overlay-white-20: #ffffff33;
+  --color-overlay-white-30: #ffffff4d;
+  --color-overlay-white-35: #ffffff59;
+  --color-overlay-white-50: #ffffff80;
+  --color-overlay-white-70: #ffffffb3;
+
+  --color-overlay-black-30: #0000004d;
+  --color-overlay-black-50: #00000080;
+  --color-overlay-black-60: #00000099;
+  --color-overlay-black-90: #000000e6;
+}
+
+/* Typography - according to Figma */
+@layer utilities {
+  .title1 {
+    @apply text-5xl font-bold;
+  }
+  .title2 {
+    @apply text-2xl font-normal;
+  }
+  .title3 {
+    @apply text-2xl font-medium;
+  }
+  .title4 {
+    @apply text-xl font-normal;
+  }
+  .headline2 {
+    @apply text-xl font-medium;
+  }
+}
+
+body {
+  font-family: "Netflix Sans", system-ui, -apple-system, sans-serif;
+  background-color: var(--color-primary-black);
+  color: var(--color-primary-white);
+}
+
+/* Animation for expanding elements */
+
+@keyframes expand {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-expand {
+  animation: expand 0.25s ease-out forwards;
+}
+
+button.splide__arrow {
+  height: 100%;
+  border-radius: 0;
+  z-index: 999;
+  width: 5rem;
+  background: transparent;
+}
+
+.splide__arrow--prev {
+  left: 0;
+}
+
+.splide__arrow--next {
+  right: 0;
+}
+
+/* בקובץ ה-CSS הגלובלי שלך */
+
+.splide__track {
+  overflow: visible !important;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
