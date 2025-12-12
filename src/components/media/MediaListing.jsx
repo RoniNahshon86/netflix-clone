@@ -3,7 +3,7 @@ import "@splidejs/react-splide/css";
 import Container from "../layout/Container";
 import MediaCard from "./MediaCard";
 
-const MediaListing = ({ heading, data, index = 0 }) => {
+const MediaListing = ({ heading, data, index = 0, openPopup }) => {
   return (
     <Container leftOnly>
       <div className="w-full relative" style={{ zIndex: 100 - index }}>
@@ -18,11 +18,20 @@ const MediaListing = ({ heading, data, index = 0 }) => {
                 gap: ".5rem",
                 perPage: 6,
                 pagination: false,
+                breakpoints: {
+                  1600: { perPage: 5 },
+                  1400: { perPage: 4 },
+                  787: { perPage: 3 },
+                  480: {
+                    perPage: 2,
+                    padding: { left: 0, right: "5rem" },
+                  },
+                },
               }}
             >
               {data.map((item) => (
                 <SplideSlide key={item.id}>
-                  <MediaCard data={item} />
+                  <MediaCard data={item} openPopup={openPopup} />
                 </SplideSlide>
               ))}
             </Splide>

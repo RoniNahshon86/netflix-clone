@@ -2,10 +2,10 @@ import Button from "./Button";
 
 import PlayIcon from "../../assets/icons/Play.svg?react";
 
-const PlayBtn = () => {
+const PlayBtn = ({ size = "lg" }) => {
   return (
     <>
-      <Button size="lg" variant="white">
+      <Button size={size} variant="white">
         <PlayIcon className="h-4" />
         <span>Play</span>
       </Button>

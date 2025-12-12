@@ -4,7 +4,7 @@ const FeatureBlock = ({ title, description, image, reverse = false }) => {
   return (
     <article className="border-b-4 border-neutral-gray-800 py-20">
       <div
-        className={`max-w-[1366px] mx-auto px-4 flex items-center justify-between gap-6 ${
+        className={`max-w-[90vw] mx-auto px-4 flex items-center justify-between gap-6 ${
           reverse ? "flex-row-reverse" : ""
         }`}
       >

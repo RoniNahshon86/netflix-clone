@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../assets/utilities/firebase/firebase";
 import { useAuth } from "../../context/AuthContext";
 import Button from "../ui/Button";
+
 import logo from "../../assets/netflix-logo.svg";
 
 const Header = () => {

@@ -1,9 +1,14 @@
-const MediaCard = ({ data }) => {
+import PlayBtn from "../ui/PlayBtn";
+
+import MoreInfoSvg from "../../assets/icons/ArrowRight.svg?react";
+import IconButton from "../ui/IconButton";
+
+const MediaCard = ({ data, openPopup }) => {
   const posterSrc =
     "https://media.themoviedb.org/t/p/w500_and_h282_face/" + data.backdrop_path;
 
   return (
-    <div className="group relative z-0 hover:z-[100]">
+    <div className="group relative z-0 hover:z-100">
       <div className="rounded overflow-hidden cursor-pointer">
         <img
           src={posterSrc}
@@ -28,31 +33,18 @@ const MediaCard = ({ data }) => {
           className="object-cover w-full h-40 rounded-t-md"
         />
         <div className="p-3 space-y-3">
-          <div className="flex items-center gap-2">
-            <button className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-white/80 transition">
-              <span className="text-black text-xs">▶</span>
-            </button>
-            <button className="w-9 h-9 rounded-full border-2 border-zinc-400 flex items-center justify-center hover:border-white transition">
-              <span className="text-white text-lg">+</span>
-            </button>
-            <button className="w-9 h-9 rounded-full border-2 border-zinc-400 flex items-center justify-center hover:border-white transition">
-              <span className="text-white text-xs">👍</span>
-            </button>
-            <button className="w-9 h-9 rounded-full border-2 border-zinc-400 flex items-center justify-center hover:border-white transition ml-auto">
-              <span className="text-white text-xs">▼</span>
-            </button>
+          <div className="flex justify-between gap-2">
+            <PlayBtn size="sm" />
+            <IconButton onClick={openPopup}>
+              <MoreInfoSvg />
+            </IconButton>
           </div>
 
           <div className="flex items-center gap-2 text-sm">
-            <span className="text-green-500 font-semibold">
-              {Math.round(data.vote_average * 10)}% Match
-            </span>
             <span className="border border-zinc-400 px-1 text-xs text-zinc-400">
               16+
             </span>
-            <span className="text-zinc-400">
-              {data.release_date?.split("-")[0]}
-            </span>
+
             <span className="border border-zinc-400 px-1 text-xs text-zinc-400">
               HD
             </span>

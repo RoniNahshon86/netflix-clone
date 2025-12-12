@@ -4,6 +4,7 @@ import Container from "../components/layout/Container";
 import MovieTitle from "../assets/utilities/functions";
 import PlayBtn from "../components/ui/PlayBtn";
 import Button from "../components/ui/Button";
+import MediaDetails from "../components/media/details/MediaDetails";
 
 import InfoSvg from "../assets/icons/Info.svg?react";
 import BrowseBg from "../assets/images/browse-bg.webp";
@@ -11,6 +12,7 @@ import MediaListing from "../components/media/MediaListing";
 
 const BrowsePage = () => {
   const [topRated, settopRated] = useState([]);
+  const [popupOpen, setpopupOpen] = useState(true);
 
   useEffect(() => {
     const myHeaders = new Headers();
@@ -36,6 +38,14 @@ const BrowsePage = () => {
       })
       .catch((error) => console.error(error));
   }, []);
+
+  const closePopup = function () {
+    setpopupOpen(false);
+  };
+
+  const openPopup = function () {
+    setpopupOpen(true);
+  };
 
   return (
     <>
@@ -68,9 +78,15 @@ const BrowsePage = () => {
               </div>
             </div>
           </div>
+          <MediaDetails isOpen={popupOpen} closePopup={closePopup} />
         </Container>
 
-        <MediaListing data={topRated} heading="Top Rated" index={0} />
+        <MediaListing
+          openPopup={openPopup}
+          data={topRated}
+          heading="Top Rated"
+          index={0}
+        />
       </section>
     </>
   );
