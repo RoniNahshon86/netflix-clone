@@ -95,8 +95,8 @@ const AISearchPopup = ({ isOpen, onClose, onMovieFound }) => {
           <div className="text-center text-neutral-gray-150 text-sm">
             <p>Try prompts like:</p>
             <p className="text-neutral-gray-100 mt-1">
-              "A funny movie for date night" • "Classic 90s action" • "Something
-              like Inception"
+              "I am in a happy mood before christmas and searching for a movie
+              to watch with my family"
             </p>
           </div>
         </div>
