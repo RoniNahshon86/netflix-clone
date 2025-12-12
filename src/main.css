@@ -113,6 +113,15 @@ body {
   color: var(--color-primary-white);
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Animation for expanding elements */
 
 @keyframes expand {
@@ -129,6 +138,8 @@ body {
 .animate-expand {
   animation: expand 0.25s ease-out forwards;
 }
+
+/* splide */
 
 button.splide__arrow {
   height: 100%;

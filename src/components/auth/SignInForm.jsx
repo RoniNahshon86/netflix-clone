@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../assets/utilities/firebase/firebase";
 import TextField from "../ui/TextField";
 import Button from "../ui/Button";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const SignInForm = () => {
   const [email, setEmail] = useState("");
@@ -76,6 +76,14 @@ const SignInForm = () => {
           {loading ? "Login..." : "Sign In"}
         </Button>
       </form>
+
+      <p className="text-neutral-gray-100">
+        New to Netflix?{" "}
+        <Link to="/signup" className="text-primary-white hover:underline">
+          Sign up now
+        </Link>
+      </p>
+
       <p className="text-neutral-gray-200 text-xs">
         This page is protected by Google reCAPTCHA to ensure you’re not a bot.
         Learn more.
