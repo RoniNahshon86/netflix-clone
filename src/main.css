@@ -123,7 +123,6 @@ body {
 }
 
 /* Animation for expanding elements */
-
 @keyframes expand {
   from {
     opacity: 0;
@@ -146,11 +145,15 @@ button.splide__arrow {
   border-radius: 0;
   z-index: 999;
   width: 5rem;
-  background: transparent;
+  background: var(--color-overlay-black-60);
+}
+
+.splide__arrow svg {
+  fill: var(--color-primary-white);
 }
 
 .splide__arrow--prev {
-  left: 0;
+  left: -6rem;
 }
 
 .splide__arrow--next {
